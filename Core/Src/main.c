@@ -33,13 +33,22 @@
 #include "dr16.h"
 #include "ws2812.h"
 #include "buzzer.h"
-#include "can.h"
-
+#include "can_motor.h"
+#include "gimbal_control.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 
+float L_x_t = 0;
+int32_t L_y_t = 156600;
+float L_x_t_actual = 0;
+float yaw_init = 0;
+
+int32_t smoothed_L_y_t = 156600;
+
+int16_t currents[4];
+int16_t filtered_speed = 0;
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -67,6 +76,13 @@ static void MPU_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+uint32_t last_send_time = 0; // 上次发送时间戳
+
+int32_t smooth_position(int32_t new_value, int32_t previous_value, float smooth_factor)
+{
+    return (int32_t)(smooth_factor * new_value + (1.0f - smooth_factor) * previous_value);
+}
 
 /* USER CODE END 0 */
 
@@ -109,11 +125,14 @@ int main(void)
     MX_SPI6_Init();
     MX_TIM12_Init();
     MX_USART1_UART_Init();
+    MX_FDCAN3_Init();
     /* USER CODE BEGIN 2 */
 
     WS2812_Ctrl(0, 0, 0);
     DR16_Iint();
     Can_Init();
+    Gimbal_Left_Head_Pid_Init();
+
     // Buzzer_Init();
 
     /* USER CODE END 2 */
@@ -124,9 +143,33 @@ int main(void)
     {
         /* USER CODE BEGIN WHILE */
 
-        // printf("%.1f    %.1f    %.1f    %.1f\r\n", RC_Ctl.rc.ch0, RC_Ctl.rc.ch1, RC_Ctl.rc.ch2, RC_Ctl.rc.ch3);
+        // printf("%.1f    %.1f    %.1f    %.1f  %d\r\n", RC_Ctl.rc.ch0, RC_Ctl.rc.ch1, RC_Ctl.rc.ch2, RC_Ctl.rc.ch3, RC_Ctl.rc.s1);
+        // printf("%d\r\n", motor_system.gimbal.left_head.motors[3].speed);
 
-        HAL_Delay(20);
+        // printf("%.1f,%05d,%05d,%05d\r\n", L_x_t, motor_system.gimbal.left_head.motors[3].speed, filtered_speed, currents[3]); // 速度环的数据打印
+        // printf("%.1f,%.1f,%05d\r\n", L_x_t, L_x_t_actual,currents[3]);
+
+        if (HAL_GetTick() - last_send_time >= 10)
+        {
+            last_send_time = HAL_GetTick();
+
+            L_y_t += (-RC_Ctl.rc.ch1 * 3000);
+
+            if (L_y_t < 130000)
+            {
+                L_y_t = 130000;
+            }
+            else if (L_y_t > 187700)
+            {
+
+                L_y_t = 187700;
+            }
+
+            smoothed_L_y_t = smooth_position(L_y_t, smoothed_L_y_t, 0.9f);
+
+            Send_MultiTurn_Position_Control_Command(smoothed_L_y_t, 600);
+        }
+
         // static uint32_t last_time = 0;
         // static uint8_t color_index = 0;
         // uint32_t current_time = HAL_GetTick();

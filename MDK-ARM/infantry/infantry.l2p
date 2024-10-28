@@ -38,7 +38,8 @@
 "infantry\dr16.o"
 "infantry\pid.o"
 "infantry\ws2812.o"
-"infantry\can.o"
+"infantry\can_motor.o"
+"infantry\gimbal_control.o"
 --library_type=microlib --strict --scatter "infantry\infantry.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

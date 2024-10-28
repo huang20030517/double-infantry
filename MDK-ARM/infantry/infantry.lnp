@@ -38,10 +38,10 @@
 "infantry\dr16.o"
 "infantry\pid.o"
 "infantry\ws2812.o"
-"infantry\can.o"
---library_type=microlib
---feedback "infantry\infantry.fed" --feedback_image=none
---strict --scatter "infantry\infantry.sct"
+"infantry\can_motor.o"
+"infantry\gimbal_control.o"
+"infantry\chassis_control.o"
+--library_type=microlib --strict --scatter "infantry\infantry.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "infantry.map" -o infantry\infantry.axf

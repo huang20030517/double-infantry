@@ -4,13 +4,6 @@
             "path": "."
         }
     ],
-    "settings": {
-        "files.associations": {
-            "can.h": "c",
-            "dr16.h": "c",
-            "fdcan.h": "c",
-            "usart.h": "c"
-        }
-    },
+    "settings": {},
     "extensions": {}
 }

@@ -1,6 +1,6 @@
---c99 --gnu -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../Peripheral/Inc -I ../RobotControl/Inc
+--c99 --gnu -c --cpu Cortex-M7.fp.dp -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc -I ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I ../Drivers/CMSIS/Include -I ../Peripheral/Inc -I ../RobotControl/Inc
 -I.\RTE\_infantry
 -IC:\Users\Huang\AppData\Local\Arm\Packs\ARM\CMSIS\6.1.0\CMSIS\Core\Include
 -IC:\Users\Huang\AppData\Local\Arm\Packs\Keil\STM32H7xx_DFP\3.1.1\Drivers\CMSIS\Device\ST\STM32H7xx\Include
 -D__UVISION_VERSION="536" -D_RTE_ -DSTM32H723xx -D_RTE_ -DUSE_HAL_DRIVER -DSTM32H723xx
--o infantry\main.o --omf_browse infantry\main.crf --depend infantry\main.d --feedback "infantry\infantry.fed" "../Core/Src/main.c"
+-o infantry\main.o --depend infantry\main.d --feedback "infantry\infantry.fed" "../Core/Src/main.c"

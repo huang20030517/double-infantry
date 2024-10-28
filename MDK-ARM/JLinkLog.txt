@@ -1,0 +1,33 @@
+T14DC 000:162.523   SEGGER J-Link V7.92k Log File
+T14DC 000:162.629   DLL Compiled: Oct 18 2023 14:58:31
+T14DC 000:162.635   Logging started @ 2024-04-08 07:43
+T14DC 000:162.640   Process: C:\Keil_v5\UV4\UV4.exe
+T14DC 000:162.649 - 162.645ms
+T14DC 000:162.657 JLINK_SetWarnOutHandler(...)
+T14DC 000:162.662 - 0.006ms
+T14DC 000:162.668 JLINK_OpenEx(...)
+T14DC 000:163.853   
+  ***** Warning: 
+T14DC 000:163.877   Out of sync , resynchronizing...
+T14DC 004:717.384   
+  ***** Warning: 
+T14DC 004:717.438   Out of sync , resynchronizing...
+T14DC 004:717.628   
+  ***** Warning: 
+T14DC 004:717.667   Out of sync , resynchronizing...
+T14DC 004:717.733   
+  ***** Error: 
+T14DC 004:717.756   Cannot connect to J-Link
+T14DC 004:718.329 - 4555.653ms returns "Cannot connect to J-Link"
+T14DC 004:718.840 
+  ***** Warning: 
+T14DC 004:718.867 API Error: API JLINK_GetHardwareVersion function called before JLINKARM_Open()
+T14DC 004:718.887 JLINK_GetHardwareVersion()
+T14DC 004:726.138   
+  ***** Error: 
+T14DC 004:726.171   Cannot connect to J-Link.
+T14DC 004:726.322 - 7.434ms
+T14DC 004:778.492 JLINK_Close()
+T14DC 004:778.614 - 0.122ms
+T14DC 004:778.630   
+T14DC 004:778.636   Closed

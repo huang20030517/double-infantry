@@ -292,17 +292,17 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 }
 
 /* USER CODE BEGIN 1 */
-#define TX_BUFFER_SIZE 64 // 缓冲区大�?
+#define TX_BUFFER_SIZE 64 // 缓冲区大�??
 
-// UART 非阻塞发送所�?变量
+// UART 非阻塞发送所�??变量
 static uint8_t tx_buffer[TX_BUFFER_SIZE];
 static volatile uint16_t tx_write_pos = 0;
 static volatile uint16_t tx_read_pos = 0;
 
-// UART 传输完成回调函数（非阻塞模式�?
+// UART 传输完成回调函数（非阻塞模式�??
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
 {
-  if (huart == &huart1) // 确保�? UART1
+  if (huart == &huart1) // 确保�?? UART1
   {
     // 更新读取位置
     tx_read_pos = (tx_read_pos + 1) % TX_BUFFER_SIZE;
@@ -318,26 +318,26 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
 // 标准输出重定向到 UART1
 int fputc(int ch, FILE *f)
 {
-  // 计算下一个写入位�?
+  // 计算下一个写入位�??
   uint16_t next_pos = (tx_write_pos + 1) % TX_BUFFER_SIZE;
 
   // 如果缓冲区已满，返回错误
   if (next_pos == tx_read_pos)
   {
-    return EOF; // 缓冲区已�?
+    return EOF; // 缓冲区已�??
   }
 
   // 将字符写入缓冲区，并更新写入位置
   tx_buffer[tx_write_pos] = (uint8_t)ch;
   tx_write_pos = next_pos;
 
-  // 如果没有正在进行的传输，启动�?次传�?
+  // 如果没有正在进行的传输，启动�??次传�??
   if (tx_read_pos == (tx_write_pos - 1 + TX_BUFFER_SIZE) % TX_BUFFER_SIZE)
   {
     HAL_UART_Transmit_IT(&huart1, &tx_buffer[tx_read_pos], 1);
   }
 
-  return ch; // 返回成功写入的字�?
+  return ch; // 返回成功写入的字�??
 }
 
 /* USER CODE END 1 */

@@ -44,3 +44,6 @@ infantry\can.o: ../Core/Inc/fdcan.h
 infantry\can.o: ../Core/Inc/usart.h
 infantry\can.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 infantry\can.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+infantry\can.o: ../RobotControl/Inc/gimbal_control.h
+infantry\can.o: ../Peripheral/Inc/pid.h
+infantry\can.o: ../Peripheral/Inc/can.h

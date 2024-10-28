@@ -15,7 +15,7 @@ void DR16_Iint(void)
 // 解析遥控器数据
 bool _Parse_RC_Data(void)
 {
-    const float scale_factor = 1.0f / 660.0f; // (1684.0 - 1024.0)
+    const float scale_factor = 1.0f / 660.0f;         // (1684.0 - 1024.0)
     const float mouse_scale_factor = 1.0f / 32768.0f; // 将鼠标值缩放到 -1 到 1 范围
 
     uint16_t rx = (RC_buffer[0] | (RC_buffer[1] << 8)) & 0x7FF;
@@ -68,11 +68,10 @@ bool _Parse_RC_Data(void)
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle)
 {
-	if (UartHandle == &huart5) 
-	{
+    if (UartHandle == &huart5)
+    {
 
-		if (!_Parse_RC_Data())
-			return;
-
-	}
+        if (!_Parse_RC_Data())
+            return;
+    }
 }

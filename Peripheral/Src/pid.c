@@ -48,7 +48,7 @@ void PID_Set_limit(pid_controler *PID, float err_limit, float i_err_limit, float
 }
 
 // 误差输入并计算 PID 输出
-float PID_Input(pid_controler *PID, float err)
+float PID_Set_Err(pid_controler *PID, float err)
 {
     // if (PID->state == PID_DISABLE)
     // {

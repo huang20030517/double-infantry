@@ -46,6 +46,6 @@ void PID_Set(pid_controler *PID, float kp, float ki, float kd, float i_err_limit
 
 void PID_Set_limit(pid_controler *PID, float err_limit, float i_err_limit, float err_dz, float output_limit);
 
-float PID_Input(pid_controler *PID, float err);
+float PID_Set_Err(pid_controler *PID, float err);
 
 #endif // PID_H

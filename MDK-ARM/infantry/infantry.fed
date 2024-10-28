@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 5060960: Last Updated: Wed Oct 23 19:19:39 2024
+;#<FEEDBACK># ARM Linker, 5060960: Last Updated: Thu Oct 24 14:26:04 2024
 ;VERSION 0.2
 ;FILE buzzer.o
 Buzzer_Init <= USED 0
@@ -6,10 +6,10 @@ Buzzer_SetTone <= USED 0
 __asm___8_buzzer_c_cffb98c9____REV16 <= USED 0
 __asm___8_buzzer_c_cffb98c9____REVSH <= USED 0
 __asm___8_buzzer_c_cffb98c9____RRX <= USED 0
-;FILE can.o
-__asm___5_can_c_Can_Init____REV16 <= USED 0
-__asm___5_can_c_Can_Init____REVSH <= USED 0
-__asm___5_can_c_Can_Init____RRX <= USED 0
+;FILE can_motor.o
+__asm___11_can_motor_c_Can_Init____REV16 <= USED 0
+__asm___11_can_motor_c_Can_Init____REVSH <= USED 0
+__asm___11_can_motor_c_Can_Init____RRX <= USED 0
 ;FILE dma.o
 __asm___5_dma_c_c03d6034____REV16 <= USED 0
 __asm___5_dma_c_c03d6034____REVSH <= USED 0
@@ -23,6 +23,11 @@ HAL_FDCAN_MspDeInit <= USED 0
 __asm___7_fdcan_c_b74940ab____REV16 <= USED 0
 __asm___7_fdcan_c_b74940ab____REVSH <= USED 0
 __asm___7_fdcan_c_b74940ab____RRX <= USED 0
+;FILE gimbal_control.o
+Gimbal_Left_Head_Pid_Init <= USED 0
+__asm___16_gimbal_control_c_da02e13c____REV16 <= USED 0
+__asm___16_gimbal_control_c_da02e13c____REVSH <= USED 0
+__asm___16_gimbal_control_c_da02e13c____RRX <= USED 0
 ;FILE gpio.o
 __asm___6_gpio_c_62724882____REV16 <= USED 0
 __asm___6_gpio_c_62724882____REVSH <= USED 0
@@ -56,7 +61,6 @@ HAL_DBGMCU_EnableDBGSleepMode <= USED 0
 HAL_DBGMCU_EnableDBGStandbyMode <= USED 0
 HAL_DBGMCU_EnableDBGStopMode <= USED 0
 HAL_DeInit <= USED 0
-HAL_Delay <= USED 0
 HAL_DisableCompensationCell <= USED 0
 HAL_DisableDomain3DBGStandbyMode <= USED 0
 HAL_DisableDomain3DBGStopMode <= USED 0
