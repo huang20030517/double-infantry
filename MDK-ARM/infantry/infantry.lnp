@@ -1,4 +1,4 @@
---cpu Cortex-M7.fp.dp
+--cpu Cortex-M7.fp.sp
 "infantry\startup_stm32h723xx.o"
 "infantry\main.o"
 "infantry\gpio.o"
@@ -34,11 +34,12 @@
 "infantry\stm32h7xx_hal_uart.o"
 "infantry\stm32h7xx_hal_uart_ex.o"
 "infantry\system_stm32h7xx.o"
-"infantry\buzzer.o"
+"infantry\can.o"
+"infantry\motor.o"
 "infantry\dr16.o"
 "infantry\pid.o"
 "infantry\ws2812.o"
-"infantry\can_motor.o"
+"infantry\buzzer.o"
 "infantry\utils.o"
 "infantry\gimbal_control.o"
 "infantry\chassis_control.o"

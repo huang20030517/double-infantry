@@ -158,7 +158,10 @@
         "name": "Peripheral",
         "files": [
           {
-            "path": "../Peripheral/Src/buzzer.c"
+            "path": "../Peripheral/Src/can.c"
+          },
+          {
+            "path": "../Peripheral/Src/motor.c"
           },
           {
             "path": "../Peripheral/Src/dr16.c"
@@ -170,7 +173,7 @@
             "path": "../Peripheral/Src/ws2812.c"
           },
           {
-            "path": "../Peripheral/Src/can_motor.c"
+            "path": "../Peripheral/Src/buzzer.c"
           },
           {
             "path": "../Peripheral/Src/utils.c"

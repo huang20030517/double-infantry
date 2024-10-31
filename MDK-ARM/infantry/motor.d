@@ -1,6 +1,5 @@
-infantry/gimbal_control.o: ..\RobotControl\Src\gimbal_control.c \
-  ..\RobotControl\Inc\gimbal_control.h ..\Core\Inc\main.h \
-  ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal.h \
+infantry/motor.o: ..\Peripheral\Src\motor.c ..\Peripheral\Inc\motor.h \
+  ..\Core\Inc\main.h ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal.h \
   ..\Core\Inc\stm32h7xx_hal_conf.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_rcc.h \
   ..\Drivers\STM32H7xx_HAL_Driver\Inc\stm32h7xx_hal_def.h \
@@ -43,6 +42,6 @@ infantry/gimbal_control.o: ..\RobotControl\Src\gimbal_control.c \
   ..\Core\Inc\fdcan.h ..\Core\Inc\main.h ..\Core\Inc\usart.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
-  ..\Peripheral\Inc\motor.h ..\Peripheral\Inc\pid.h \
+  ..\Peripheral\Inc\pid.h ..\RobotControl\Inc\gimbal_control.h \
   ..\Peripheral\Inc\pid.h ..\Peripheral\Inc\dr16.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h

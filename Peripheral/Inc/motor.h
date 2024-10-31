@@ -1,7 +1,7 @@
 
 
-#ifndef __CAN_H__
-#define __CAN_H__
+#ifndef __MOTOR_H__
+#define __MOTOR_H__
 
 #include "main.h"
 #include "fdcan.h"
@@ -10,7 +10,7 @@
 
 typedef struct
 {
-    float angle;       // 角度值
+    float angle;         // 角度值
     int16_t speed;       // 速度值
     int16_t current;     // 电流值
     uint8_t temperature; // 温度值
@@ -56,9 +56,7 @@ extern MotorSystem_t motor_system;
 
 // -------------------------- 函数声明 -------------------------- //
 
-void Can_Init(void);
-void Motor_ProcessCANMessage(FDCAN_RxHeaderTypeDef *header, uint8_t *data);
-HAL_StatusTypeDef Send_Motor_Currents(int16_t *currents, uint8_t num_motors);
+HAL_StatusTypeDef Send_Motor_Currents(FDCAN_HandleTypeDef *hfdcan, uint32_t can_id, int16_t *currents, uint8_t num_motors);
 HAL_StatusTypeDef Send_MultiTurn_Position_Control_Command(int32_t angleControl, uint16_t maxSpeed);
 
-#endif /*__ CAN_H__ */
+#endif /*__ MOTOR_H__ */

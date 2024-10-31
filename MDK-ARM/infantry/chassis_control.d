@@ -43,5 +43,5 @@ infantry/chassis_control.o: ..\RobotControl\Src\chassis_control.c \
   ..\Core\Inc\fdcan.h ..\Core\Inc\main.h ..\Core\Inc\usart.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
-  ..\Peripheral\Inc\can_motor.h ..\Peripheral\Inc\pid.h \
-  ..\Peripheral\Inc\pid.h
+  ..\Peripheral\Inc\motor.h ..\Peripheral\Inc\pid.h \
+  ..\Peripheral\Inc\pid.h ..\Peripheral\Inc\can.h

@@ -7,10 +7,12 @@
 #include "fdcan.h"
 #include "usart.h"
 
-#include "can_motor.h"
+#include "motor.h"
+#include "utils.h"
 #include "pid.h"
+#include "can.h"
 
 
-
+void Process_Chassis_Motor_Data(uint32_t id, uint8_t *data);
 
 #endif /* __CHASSIS_CONTROL_H__ */

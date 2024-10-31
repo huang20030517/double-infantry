@@ -987,9 +987,14 @@
           <GroupName>Peripheral</GroupName>
           <Files>
             <File>
-              <FileName>buzzer.c</FileName>
+              <FileName>can.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Peripheral\Src\buzzer.c</FilePath>
+              <FilePath>..\Peripheral\Src\can.c</FilePath>
+            </File>
+            <File>
+              <FileName>motor.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Peripheral\Src\motor.c</FilePath>
             </File>
             <File>
               <FileName>dr16.c</FileName>
@@ -1007,9 +1012,9 @@
               <FilePath>..\Peripheral\Src\ws2812.c</FilePath>
             </File>
             <File>
-              <FileName>can_motor.c</FileName>
+              <FileName>buzzer.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Peripheral\Src\can_motor.c</FilePath>
+              <FilePath>..\Peripheral\Src\buzzer.c</FilePath>
             </File>
             <File>
               <FileName>utils.c</FileName>

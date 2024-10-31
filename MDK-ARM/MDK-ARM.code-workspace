@@ -6,8 +6,13 @@
     ],
     "settings": {
         "files.associations": {
-            "buzzer.h": "c",
-            "ws2812.h": "c"
+            "can.h": "c",
+            "chassis_control.h": "c",
+            "fdcan.h": "c",
+            "motor.h": "c",
+            "usart.h": "c",
+            "gimbal_control.h": "c",
+            "main.h": "c"
         }
     },
     "extensions": {}

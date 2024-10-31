@@ -46,5 +46,5 @@ infantry/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Peripheral\Inc\dr16.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
   ..\Peripheral\Inc\ws2812.h ..\Peripheral\Inc\buzzer.h \
-  ..\Peripheral\Inc\can_motor.h ..\Peripheral\Inc\pid.h \
+  ..\Peripheral\Inc\motor.h ..\Peripheral\Inc\pid.h \
   ..\RobotControl\Inc\gimbal_control.h ..\Peripheral\Inc\pid.h
