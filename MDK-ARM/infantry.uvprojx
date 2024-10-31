@@ -183,7 +183,7 @@
             <hadIRAM>1</hadIRAM>
             <hadXRAM>0</hadXRAM>
             <uocXRam>0</uocXRam>
-            <RvdsVP>3</RvdsVP>
+            <RvdsVP>2</RvdsVP>
             <RvdsMve>0</RvdsMve>
             <RvdsCdeCp>0</RvdsCdeCp>
             <hadIRAM2>1</hadIRAM2>
@@ -1010,6 +1010,11 @@
               <FileName>can_motor.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Peripheral\Src\can_motor.c</FilePath>
+            </File>
+            <File>
+              <FileName>utils.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Peripheral\Src\utils.c</FilePath>
             </File>
           </Files>
         </Group>

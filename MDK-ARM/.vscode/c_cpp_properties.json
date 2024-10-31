@@ -74,7 +74,17 @@
                 "__GNUC_MINOR__=2",
                 "__GNUC_PATCHLEVEL__=1"
             ],
-            "intelliSenseMode": "${default}"
+            "compilerPath": "C:/Keil_v5/ARM/ARMCLANG/bin/armclang.exe",
+            "intelliSenseMode": "gcc-arm",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/Core/Inc",
+                    "${workspaceFolder}/Drivers/STM32H7xx_HAL_Driver/Inc",
+                    "${workspaceFolder}/Peripheral/Inc",
+                    "${workspaceFolder}/RobotControl/Inc"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
         }
     ],
     "version": 4

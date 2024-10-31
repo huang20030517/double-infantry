@@ -39,6 +39,7 @@
 "infantry\pid.o"
 "infantry\ws2812.o"
 "infantry\can_motor.o"
+"infantry\utils.o"
 "infantry\gimbal_control.o"
 "infantry\chassis_control.o"
 --library_type=microlib --strict --scatter "infantry\infantry.sct"

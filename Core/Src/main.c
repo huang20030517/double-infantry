@@ -129,7 +129,7 @@ int main(void)
     /* USER CODE BEGIN 2 */
 
     WS2812_Ctrl(0, 0, 0);
-    DR16_Iint();
+    DR16_Init();
     Can_Init();
     Gimbal_Left_Head_Pid_Init();
 

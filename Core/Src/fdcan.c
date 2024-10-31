@@ -410,24 +410,23 @@ void HAL_FDCAN_MspDeInit(FDCAN_HandleTypeDef* fdcanHandle)
 
 void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef *hfdcan, uint32_t RxFifo0ITs)
 {
-    if (hfdcan == &hfdcan2) // 确保回调来自 CAN2
+    if (hfdcan == &hfdcan2) 
     {
-        // �?查是否有新消息到�?
+        
         if (RxFifo0ITs & FDCAN_IT_RX_FIFO0_NEW_MESSAGE)
         {
             FDCAN_RxHeaderTypeDef rx_header;
             uint8_t rx_data[8];
 
-            // �? FIFO0 中获取消�?
+            
             if (HAL_FDCAN_GetRxMessage(hfdcan, FDCAN_RX_FIFO0, &rx_header, rx_data) == HAL_OK)
             {
-                // 解析消息并更新电机数�?
+            
                 Motor_ProcessCANMessage(&rx_header, rx_data);
             }
             else
             {
-                // 读取消息失败时的错误处理
-               
+                
             }
         }
     }

@@ -8,35 +8,6 @@ int16_t friction_wheel_speed = 0;
 
 uint8_t motor_update_flags = 0;
 
-// 低通滤波器
-int16_t low_pass_filter(int16_t input, int16_t previous_output, float alpha)
-{
-    return (int16_t)(alpha * input + (1.0f - alpha) * previous_output);
-}
-
-// 更新并计算旋转物体的实际角度
-float Update_Angle(float current_angle)
-{
-    static int16_t rotation_count = 0;
-    static float previous_angle = 0;
-
-    float angle_difference = current_angle - previous_angle;
-
-    // 判断是否穿越了0度或360度的边界
-    if (angle_difference > 180.0f)
-    {
-        rotation_count--;
-    }
-    else if (angle_difference < -180.0f)
-    {
-        rotation_count++;
-    }
-
-    previous_angle = current_angle;
-
-    return rotation_count * 360.0f + current_angle;
-}
-
 void Gimbal_Left_Head_Pid_Init(void)
 {
     // 初始化左头的 PID 控制器，直接访问全局变量
@@ -111,11 +82,11 @@ void Gimbal_Left_Head_Motor_Control(MotorData_t *motor, uint8_t index)
         break;
 
     case 3: // Yaw 电机控制逻辑（位置环+速度环）
-        L_x_t_actual = Update_Angle(motor_system.gimbal.left_head.motors[3].angle - yaw_init);
-        float position_output = PID_Set_Err(&left_head->yaw_pid[0], L_x_t - L_x_t_actual);
+        // L_x_t_actual = Update_Angle(motor_system.gimbal.left_head.motors[3].angle - yaw_init);
+        // float position_output = PID_Set_Err(&left_head->yaw_pid[0], L_x_t - L_x_t_actual);
 
-        filtered_speed = low_pass_filter(motor->speed, filtered_speed, 0.7f);
-        currents[3] = PID_Set_Err(&left_head->yaw_pid[1], position_output - filtered_speed);
+        // filtered_speed = low_pass_filter(motor->speed, filtered_speed, 0.7f);
+        // currents[3] = PID_Set_Err(&left_head->yaw_pid[1], position_output - filtered_speed);
 
         break;
 

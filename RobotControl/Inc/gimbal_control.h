@@ -22,6 +22,6 @@ extern int16_t filtered_speed;
 
 void Gimbal_Left_Head_Pid_Init();
 void Gimbal_Left_Head_Motor_Control(MotorData_t *motor, uint8_t index);
-int16_t low_pass_filter(int16_t input, int16_t previous_output, float alpha);
+
 
 #endif /*__ GIMBAL_CONTROL_H__ */

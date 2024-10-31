@@ -4,6 +4,11 @@
             "path": "."
         }
     ],
-    "settings": {},
+    "settings": {
+        "files.associations": {
+            "buzzer.h": "c",
+            "ws2812.h": "c"
+        }
+    },
     "extensions": {}
 }

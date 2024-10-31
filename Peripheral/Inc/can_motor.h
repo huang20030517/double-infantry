@@ -8,10 +8,9 @@
 #include "usart.h"
 #include "pid.h"
 
-// 定义单个电机的数据结构体
 typedef struct
 {
-    float angle;         // 角度值
+    float angle;       // 角度值
     int16_t speed;       // 速度值
     int16_t current;     // 电流值
     uint8_t temperature; // 温度值
@@ -54,6 +53,8 @@ typedef struct
 
 // 声明一个全局电机系统实例
 extern MotorSystem_t motor_system;
+
+// -------------------------- 函数声明 -------------------------- //
 
 void Can_Init(void);
 void Motor_ProcessCANMessage(FDCAN_RxHeaderTypeDef *header, uint8_t *data);
